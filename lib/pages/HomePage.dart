@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:event_management_flutter/pages/AddEventScreen.dart';
 import 'package:event_management_flutter/widgets/common/EventTile.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton.small(
+          shape: const CircleBorder(),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddEventScreen()));
+          },
+          child: const Icon(Icons.add),
+        ),
         backgroundColor: Color(0xfffdfdfd),
         body: SingleChildScrollView(
           child: Column(
